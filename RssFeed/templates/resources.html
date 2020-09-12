@@ -1,0 +1,324 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+
+<div class="body1">
+    <div class="row text-center">
+        <div class="container">
+            <div id="resource-head" class="text-center pt-4 mb-3">
+                <h1></h1>
+                <p class="float-left bit-img-cls">
+                    <img class="bitcoin-img" src="{% static '/img/news/bitcoin.png' %}" />
+                </p>
+                <p>
+                    Cryptocurrencies are Digital money and a revolutionary system in the world of finance . We have provided a collection of top resources from the world of cryptocurrency , ICOs , wallets , tokens and blockchains . Use these resources to have a grasp of
+                    the system before you store significant amount of value in it .
+                </p>
+            </div>
+
+            <!--ROW ONE-->
+            <h1 class="trending-tittle ml-4"><strong>Wallets</strong></h1>
+            <div class="row text-center">
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            <span>Crypto Wallets
+                <img
+                  class="cat_icons"
+                  src="{% static 'img/category icons/cryptowallets.png' %}"
+              /></span>
+                        </h3>
+                        <ul class="res-ul">
+                            <p>Everything you need to know about the key web-based wallets</p>
+                            {% for i in c_wallets %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" /> {{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Hardware Wallets
+                            <img class="cat_icons" src="{% static 'img/category icons/hardwarewallets.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>
+                                Considered the gold standard of security, we review the top hardware devices
+                            </p>
+                            {% for i in h_wallets %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Crypto Exchange
+                            <img class="cat_icons" src="{% static 'img/category icons/cryptoexchange.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>
+                                Easily discern and see developments in different blockchain fees
+                            </p>
+                            {% for i in c_exchanges %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW TWO-->
+            <h1 class="trending-tittle ml-4">
+                <strong>Altcoins and Bitcoins </strong>
+            </h1>
+            <div class="row text-center">
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Cryptocurrency News
+                            <img class="cat_icons" src="{% static 'img/category icons/cryptonews.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>
+                                The top resources to stay up to date with cryptocurrency developments
+                            </p>
+                            {% for i in c_news %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Crypto Forums
+                            <img class="cat_icons" src="{% static 'img/category icons/cryptoforums.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>
+                                Have your voice heard and contribute to these key cryptocurrency forums
+                            </p>
+                            {% for i in c_forums %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Reddit Cryptocurrency
+                            <img class="cat_icons" src="{% static 'img/category icons/reddit.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>
+                                From Bitcoin to Blockchain, there’s a subreddit for every crypto community
+                            </p>
+                            {% for i in r_cryptocurrency %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--ROW THREE-->
+            <h1 class="trending-tittle ml-4"><strong>Mining</strong></h1>
+            <br />
+            <div class="row text-center">
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Mining Softwares
+                            <img class="cat_icons" src="{% static 'img/category icons/miningsoftware.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>Buy and sell hash power at a rate which suits you</p>
+                            {% for i in b_mining_software %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Mining Pools
+                            <img class="cat_icons" src="{% static 'img/category icons/miningpool.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>Pool hash power with the biggest players like Bitmain</p>
+                            {% for i in m_pools %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--ROW FOUR-->
+            <h1 class="trending-tittle ml-4">
+                <strong>Altcoins (ICO & More)</strong>
+            </h1>
+            <div class="row text-center">
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Airdrops
+                            <img class="cat_icons" src="{% static 'img/category icons/airdrop.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>Capitalise on crypto airdrops by getting tokens pre-ICO</p>
+                            {% for i in airdrops %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Crypto Calender
+                            <img class="cat_icons" src="{% static 'img/category icons/calendar.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>
+                                Calendars covering all the key cryptocurrency and ICO events
+                            </p>
+                            {% for i in c_calender %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--ROW FIVE-->
+            <h1 class="trending-tittle ml-4">
+                <strong>Charting and Gambling </strong>
+            </h1>
+            <div class="row text-center">
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Charting
+                            <img class="cat_icons" src="{% static 'img/category icons/charting.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>Get the latest data and charts to assist your analysis</p>
+                            {% for i in charting %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Crypto Gambling
+                            <img class="cat_icons" src="{% static 'img/category icons/cryptogambling.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>
+                                From roulette to sports betting, wager your cryptocurrency to win cryptocurrency
+                            </p>
+                            {% for i in c_gambling %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="container1">
+                        <h3 class="res-h1">
+                            Coin Tracking
+                            <img class="cat_icons" src="{% static 'img/category icons/cointracking.png' %}" />
+                        </h3>
+                        <ul class="res-ul">
+                            <p>Always analyze and monitor price with these tasty trackers</p>
+                            {% for i in c_tracking %}
+
+                            <a href="{{i.link}}" target="_blank">
+                                <li class="text-dark">
+                                    <img class="links_img mr-2" src="{{i.img}}" />{{i.name}}
+                                </li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+.container1 {
+    width: 90%;
+    margin: 10px auto;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+    font-family: 'Roboto';
+}
+
+h3.res-h1 {
+    background-color: #e82020;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 120%;
+    font-weight: normal;
+    width: 100%;
+}
+
+ul.res-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.res-ul li {
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.body1 {
+    background: rgb(255, 255, 255);
+    padding-bottom: 20px;
+}
+
+#resource-head h1 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.bitcoin-img {
+    width: 95%;
+}
+
+.bit-img-cls {
+    width: 10%;
+}
+
+.cat_icons {
+    width: 10%;
+    background-color: white;
+    float: right;
+}
+
+.res-ul p {
+    width: 100%;
+    text-align: center;
+}
+
+.links_img {
+    width: 5%;
+}
+
+
+/* Popup container */
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+/* The actual popup (appears on top) */
+
+.popup .popuptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: '';
+    position: absolute;
+    top: none;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
