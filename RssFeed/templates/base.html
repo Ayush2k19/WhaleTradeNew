@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{% static '/css/nice-select.css' %}" />
     <link rel="stylesheet" href="{% static '/css/style.css' %}" />
     <link rel="stylesheet" href="{% static '/css/style4.css' %}" />
-    <link rel="stylesheet" href="{% static '/css/resources.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/resources_css.css' %}" />
 </head>
 
 <body>
@@ -201,7 +201,7 @@
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;
                                     <script>
-                                        document.write(new Date().getFullYear())
+                                        document.write(new Date().getFullYear());
                                     </script>
                                     <a href="/">Whale Trade</a>
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -265,18 +265,9 @@
     <script src="{% static '/js/plugins.js' %}"></script>
     <script src="{% static '/js/main.js' %}"></script>
     <script>
-        // When the user clicks on div, open the popup
-        function myFunction() {
-            var popup = document.getElementById('myPopup')
-            popup.classList.toggle('show')
-        }
-    </script>
-    <script>
-        // When the user clicks on div, open the popup
-        function myFunction1() {
-            var popup = document.getElementById('myPopup')
-            popup.classList.toggle('show')
-        }
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
 </body>
 
