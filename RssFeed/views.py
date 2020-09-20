@@ -448,3 +448,7 @@ def resources(request):
 
     }
     return render(request, 'resources.html', context)
+
+
+def trending(request):
+    return render(request, "trending.html")

@@ -5,10 +5,10 @@ from . import views
 from .views import *
 
 
+urlpatterns = [
 
-urlpatterns=[
-    
-    path('',views.index, name='index'),
-    path('resources/',views.resources, name='resources')
-    
+    path('', views.index, name='index'),
+    path('resources/', views.resources, name='resources'),
+    path('trending/', views.trending, name='trending')
+
 ]

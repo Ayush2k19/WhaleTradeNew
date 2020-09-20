@@ -23,8 +23,9 @@
     <link rel="stylesheet" href="{% static '/css/themify-icons.css' %}" />
     <link rel="stylesheet" href="{% static '/css/slick.css' %}" />
     <link rel="stylesheet" href="{% static '/css/nice-select.css' %}" />
-    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/style2.css' %}" />
     <link rel="stylesheet" href="{% static '/css/style4.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/trending1.css' %}" />
     <link rel="stylesheet" href="{% static '/css/resources_css.css' %}" />
 </head>
 
@@ -104,7 +105,7 @@
                                         <ul id="navigation">
                                             <li><a href="/">News Feed</a></li>
                                             <li><a href="/resources">Resources</a></li>
-                                            <li><a href="#">About</a></li>
+                                            <li><a href="/trending">Trending</a></li>
                                             <li><a href="#">Contact</a></li>
                                             <li>
                                                 <a href="#">Pages</a>
@@ -267,6 +268,27 @@
     <script>
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+    <script>
+        $("#latest-ico").onclick(function() {
+            $("#latest-ico-content").addClass("d-flex");
+            $("#latest-ico-content").removeClass("d-none");
+
+            $("#trending-ico-content").addClass("d-none");
+            $("#trending-ico-content").removeClass("d-flex");
+        });
+
+        $("#trending-ico").onclick(function() {
+            if ($("#trending-ico-content").hasClass("d-none")) {
+                $("#trending-ico-content").addClass("d-flex");
+                $("#trending-ico-content").removeClass("d-none");
+            }
+            if ($("#latest-ico-content").hasClass("d-flex")) {
+                $("#latest-ico-content").addClass("d-none");
+                $("#latest-ico-content").removeClass("d-flex");
+            }
         });
     </script>
 </body>
