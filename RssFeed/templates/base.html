@@ -270,27 +270,6 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-
-    <script>
-        $("#latest-ico").onclick(function() {
-            $("#latest-ico-content").addClass("d-flex");
-            $("#latest-ico-content").removeClass("d-none");
-
-            $("#trending-ico-content").addClass("d-none");
-            $("#trending-ico-content").removeClass("d-flex");
-        });
-
-        $("#trending-ico").onclick(function() {
-            if ($("#trending-ico-content").hasClass("d-none")) {
-                $("#trending-ico-content").addClass("d-flex");
-                $("#trending-ico-content").removeClass("d-none");
-            }
-            if ($("#latest-ico-content").hasClass("d-flex")) {
-                $("#latest-ico-content").addClass("d-none");
-                $("#latest-ico-content").removeClass("d-flex");
-            }
-        });
-    </script>
 </body>
 
 </html>
