@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add Blog Post</title>
+  </head>
+  <body>
+    <h1>Update Blog Post</h1>
+    {% if user.is_authenticated %}
+      {% if user.id == post.author.id %}
+        <div class='form-group'>
+        <form method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+        <button class='btn-btn secondary'>Update</button>
+       </div>
+       {% endif %}
+
+    {% else %}
+    This page can't be accessed
+    {% endif %}
+
+  </body>
+</html>
+
+{% endblock %}

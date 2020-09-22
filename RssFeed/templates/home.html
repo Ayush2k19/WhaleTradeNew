@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Post</title>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Post</h1>
+
+
+    <ul>
+      {% for post in object_list %}
+       <a href="{% url 'article-detail' post.pk %}"> {{post.title}}</a> | {{post.author}}
+       <div class="row-1">
+                        <a href="#"><img class="channel-img" src="https://images.pexels.com/videos/3209211/free-video-3209211.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" /></a>
+                        <div class="name-block">
+                            <a href="#">
+                                <p class="channel-name">BitCoin</p>
+                            </a>
+                        </div>
+                    </div>
+
+      <div></div>
+      {{post.body|slice:":200"}}<hr>
+      {% endfor %}
+
+    </ul>
+</div>
+  </body>
+</html>
+
+
+{% endblock %}
