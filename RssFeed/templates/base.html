@@ -106,33 +106,25 @@
                                             <li><a href="/">News Feed</a></li>
                                             <li><a href="/resources">Resources</a></li>
                                             <li><a href="/trending">Trending</a></li>
-                                            <li><a href="add_post/">Add Post</a></li>
+                                            <li><a href="/add_post/">Add Post</a></li>
 
+                                            {% if user.is_authenticated %}
 
-                                              {% if user.is_authenticated %}
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/logout/">Logout</a>
+                                            </li>
 
-                                              <li class="nav-item">
-      <a class="nav-link" href="(logout/)">Logout</a>
-    </li>
+                                            {% else %}
 
-    {% else %}
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/register/">Register</a>
+                                            </li>
 
-    <li class="nav-item">
-      <a class="nav-link" href="(register/)">Register</a>
-    </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/login/">Login</a>
+                                            </li>
 
-
-
-    <li class="nav-item">
-      <a class="nav-link" href="(login/)">Login</a>
-    </li>
-
-
-    {% endif %}
-
-
-
-
+                                            {% endif %}
 
                                             <li>
                                                 <a href="#">Pages</a>
