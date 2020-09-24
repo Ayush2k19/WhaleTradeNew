@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+
+<div class="container tel-show-cont">
+    <div class="row">
+        <div class="col-12 col-md-3 text-center">
+            <div class="card tel-card" style="width: 90%;">
+                <img src="{% static '/img/meeting.jpg' %}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <a href="#" class="btn btn-success btn-block"><i class="fab fa-telegram"></i> View Group</a
+          >
+
+          <h5 class="card-title text-center mt-3">Bitcoin</h5>
+          <p class="card-text">
+            <span class="text-danger">Attention:</span>
+            <span class="text-dark"
+              >Please Conduct Your Own Reserch before Trustion the Content.
+              Especially if They asked you for Money</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-9">
+      <div class="about-channel">
+        <div class="channel-heading">
+          <i class="material-icons" style="font-size:48px;">people</i>
+          <span class="channel-heading-span ml-3">Bitcoin</span>
+        </div>
+        <hr />
+        <div class="about-channel-content">
+          Sed nec purus sollicitudin, aliquet nisi eu, rhoncus elit. Fusce
+          blandit, nunc et placerat commodo, eros sem vestibulum sem, ut rhoncus
+          felis sem elementum nisl. Sed sagittis vestibulum lorem et mattis.
+          Etiam sit amet nunc vel est ullamcorper ultrices. Sed feugiat erat non
+          lorem ullamcorper, sed mollis diam congue. Morbi non tellus ante. Cras
+          nec varius augue. Sed commodo molestie libero ac efficitur.
+        </div>
+      </div>
+      <div class="comment-form">
+        <i class="fa fa-comments-o" style="font-size:36px"> Comment </i>
+        <a class="float-right text-primary" href="/login">Login to Comment</a>
+                    <form method="post">
+                        <textarea rows="6" placeholder="Your Comment..."></textarea>
+                        <button class="btn btn-success" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="desc">Telegram Groups You may like</div>
+        <div class="row other-channels">
+            <div class="col-12 col-sm-6 col-md-3 channel-inner">
+                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                <span class="heading-inner">Bitcoin</span>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 channel-inner">
+                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                <span class="heading-inner">Bitcoin</span>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 channel-inner">
+                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                <span class="heading-inner">Bitcoin</span>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 channel-inner">
+                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                <span class="heading-inner">Bitcoin</span>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

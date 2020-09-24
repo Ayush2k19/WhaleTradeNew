@@ -457,6 +457,14 @@ def trending(request):
     return render(request, "trending.html")
 
 
+def registeration(request):
+    return render(request, "register.html")
+
+
+def telegramShow(request):
+    return render(request, "telegram_show.html")
+
+
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'

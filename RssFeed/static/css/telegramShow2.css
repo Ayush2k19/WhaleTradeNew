@@ -1,0 +1,50 @@
+.tel-show-cont {
+    margin-top: 5%;
+}
+
+.channel-heading {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.channel-heading-span {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.about-channel hr {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+textarea {
+    width: 100%;
+}
+
+.channel-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.channel-inner img {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+}
+
+.heading-inner {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.desc {
+    text-align: center;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+.other-channels {
+    margin: 10px 0;
+}
