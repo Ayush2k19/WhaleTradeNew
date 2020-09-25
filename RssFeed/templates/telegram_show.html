@@ -3,7 +3,7 @@
 <div class="container tel-show-cont">
     <div class="row">
         <div class="col-12 col-md-3 text-center">
-            <div class="card tel-card" style="width: 90%;">
+            <div class="card tel-card" style="width: 90%">
                 <img src="{% static '/img/meeting.jpg' %}" class="card-img-top" alt="..." />
                 <div class="card-body">
                     <a href="#" class="btn btn-success btn-block"><i class="fab fa-telegram"></i> View Group</a
@@ -23,7 +23,7 @@
     <div class="col-12 col-md-9">
       <div class="about-channel">
         <div class="channel-heading">
-          <i class="material-icons" style="font-size:48px;">people</i>
+          <i class="material-icons" style="font-size: 48px">people</i>
           <span class="channel-heading-span ml-3">Bitcoin</span>
         </div>
         <hr />
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="comment-form">
-        <i class="fa fa-comments-o" style="font-size:36px"> Comment </i>
+        <i class="fa fa-comments-o" style="font-size: 36px"> Comment </i>
         <a class="float-right text-primary" href="/login">Login to Comment</a>
                     <form method="post">
                         <textarea rows="6" placeholder="Your Comment..."></textarea>
@@ -46,23 +46,39 @@
                 </div>
             </div>
         </div>
-        <div class="desc">Telegram Groups You may like</div>
+        <div class="desc"><span>Telegram Groups You may like</span></div>
         <div class="row other-channels">
             <div class="col-12 col-sm-6 col-md-3 channel-inner">
-                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
-                <span class="heading-inner">Bitcoin</span>
+                <a href="#">
+                    <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                </a>
+                <a class="text-dark heading-inner" href="#">
+                    <span>Bangkok Fix</span>
+                </a>
             </div>
             <div class="col-12 col-sm-6 col-md-3 channel-inner">
-                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
-                <span class="heading-inner">Bitcoin</span>
+                <a href="#">
+                    <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                </a>
+                <a class="text-dark heading-inner" href="#">
+                    <span>DYD Betting</span>
+                </a>
             </div>
             <div class="col-12 col-sm-6 col-md-3 channel-inner">
-                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
-                <span class="heading-inner">Bitcoin</span>
+                <a href="#">
+                    <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                </a>
+                <a class="text-dark heading-inner" href="#">
+                    <span>TipsReapers</span>
+                </a>
             </div>
             <div class="col-12 col-sm-6 col-md-3 channel-inner">
-                <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
-                <span class="heading-inner">Bitcoin</span>
+                <a href="#">
+                    <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+                </a>
+                <a class="text-dark heading-inner" href="#">
+                    <span>TMasterMindzBets</span>
+                </a>
             </div>
         </div>
     </div>
