@@ -112,7 +112,10 @@
                                             <li><a href="/">News Feed</a></li>
                                             <li><a href="/resources">Resources</a></li>
                                             <li><a href="/trending">Trending</a></li>
-                                            <li><a href="/add_post/">Add Post</a></li>
+                                            <li><a href="/show/">Show</a></li>
+
+                                            
+                                            <li><a href="/article/(?P<pk>\d+)$">AD</a></li>
 
                                             {% if user.is_authenticated %}
 
@@ -138,7 +141,7 @@
                                                     <li><a href="#">Element</a></li>
                                                     <li><a href="#">Blog</a></li>
                                                     <li><a href="#">Blog Details</a></li>
-                                                    <li><a href="#">Categori Details</a></li>
+                                                    <li><a href="#">Category Details</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
