@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="{% static '/css/Registration-Form-with-Photo.css' %}" />
     <link rel="stylesheet" href="{% static '/css/register.css' %}" />
     <link rel="stylesheet" href="{% static '/css/telegramShow.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/Login-Form-Clean.css' %}" />
+    <link rel="stylesheet" href="{% static '/fonts2/ionicons.min.css' %}" />
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
@@ -114,7 +117,6 @@
                                             <li><a href="/trending">Trending</a></li>
                                             <li><a href="/show/">Show</a></li>
 
-                                            
                                             <li><a href="/article/(?P<pk>\d+)$">AD</a></li>
 
                                             {% if user.is_authenticated %}
