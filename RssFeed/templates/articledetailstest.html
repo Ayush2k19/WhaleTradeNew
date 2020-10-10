@@ -1,0 +1,20 @@
+
+
+{% block content %}
+
+
+
+<h1>{{post.title}}</h1>
+<small> {{post.author}}</small>  |
+{% if user.is_authenticated %}
+  {% if user.id == post.author.id %}
+  <a href="{% url 'update_post' post.pk %}" class="btn btn-primary " > Edit </a>  |  <a href="{% url 'delete_post' post.pk %}" class="btn btn-warning " > Delete </a>{% endif %} {% endif %}<br></br>
+<small>{{post.post_date}}</small>
+<hr>
+{{post.body}}
+
+
+<br></br>
+<a href="{% url 'trending' %}" class="btn btn-secondary" > Back </a>
+
+{% endblock %}

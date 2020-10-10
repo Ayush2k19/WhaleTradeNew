@@ -20,6 +20,6 @@ from RssFeed.urls import urlpatterns as RssUrls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(RssUrls)),
-    path('members/',include('django.contrib.auth.urls')),
+    path('RssFeed/',include('django.contrib.auth.urls')),
     path('members/',include('members.urls')),
 ]

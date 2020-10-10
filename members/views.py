@@ -7,15 +7,15 @@ from django.urls import reverse_lazy
 
 class UserRegisterView(generic.CreateView):
     form_class = UserCreationForm
-    template_name='registration/register.html'
-    success_url=reverse_lazy('login')
+    template_name='RssFeed/register.html'
+    success_url=reverse_lazy('login.html')
 
 
 
 class UserEditView(generic.UpdateView):
     form_class = UserChangeForm
-    template_name='registration/edit_profile.html'
-    success_url=reverse_lazy('home')
+    template_name='RssFeed/edit_profile.html'
+    success_url=reverse_lazy('index')
 
     def get_object(self):
         return self.request.user

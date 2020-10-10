@@ -9,6 +9,7 @@ class Post(models.Model):
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     body=models.TextField()
     post_date=models.DateField(auto_now_add=True)
+    group_url = models.URLField(max_length=200  )
 
 
     def __str__(self):
