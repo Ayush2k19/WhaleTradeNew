@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from .forms import PostForm, EditForm
+from members.forms import SignUpForm
 from django.urls import reverse_lazy
 from .feedparser import parse
 from datetime import date, datetime
-from django.contrib.auth.forms import UserCreationForm,UserChangeForm
-from django.views import generic
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.views import generic, View
 
 today = date.today()
 
@@ -441,20 +442,109 @@ def trending(request):
 
 
 def registeration(request):
-    return render(request, "register.html")
+
+    return render(request, 'register.html')
 
 
 def telegramShow(request):
     return render(request, "telegram_show.html")
 
+
 def login(request):
     return render(request, "login.html")
 
 
+def logout(request):
+    return render(request, "index.html")
+
+
 class HomeView(ListView):
+    # class HomeView(View) :
     model = Post
-    template_name = 'home.html'
+    fields = '__all__'
+    template_name = 'trending.html'
     ordering = ['-post_date']
+    NewsFeed1 = parse("https://cointelegraph.com/rss")
+    NewsFeed2 = parse("https://news.bitcoin.com/feed/")
+    NewsFeed3 = parse(
+        "https://www.reddit.com/r/CryptoCurrency/top/.rss?format=xml")
+    cointelegraph, bitcoin, reddit = [], [], []
+    i = NewsFeed1.entries
+    for a in i:
+        datetime1 = a.published[5:25]
+        dict = {
+            'title': a.title[0:75],
+            'img': a.links[1].href,
+            'link': a.link,
+            'date': a.published[5:16],
+            'datetime2': datetime.strptime(datetime1, '%d %b %Y %H:%M:%S'),
+            'tag': a.tags[0].term,
+            'name': "CoinTelegraph"
+        }
+        cointelegraph.append(dict)
+    i = NewsFeed2.entries
+    for a in i:
+        b = a.summary
+        c = parse(b)
+        img = c.feed.img["src"]
+        datetime1 = a.published[5:25]
+        dict = {
+            'title': a.title[0:75],
+            'link': a.link,
+            'date': a.published[5:16],
+            'datetime2': datetime.strptime(datetime1, '%d %b %Y %H:%M:%S'),
+            'tag': a.tags[0].term,
+            'img': img,
+            'name': "Bitcoin"
+        }
+        bitcoin.append(dict)
+    i = NewsFeed3.entries
+    for a in i:
+        c = a.content[0].value
+        b = parse(c)
+        datetime1 = a.updated[0:10] + " " + a.updated[11:19]
+        if b.feed.has_key('img'):
+            img = b.feed.img["src"]
+            dict = {
+                'title': a.title[0:75],
+                'link': a.link,
+                'date': a.updated[0:10],
+                'datetime2': datetime.strptime(datetime1, '%Y-%m-%d %H:%M:%S'),
+                'tag': a.tags[0].term,
+                'img': img,
+                'name': "Reddit"
+            }
+            reddit.append(dict)
+        else:
+            pass
+    l = cointelegraph+bitcoin+reddit
+    lf = sorted(l, key=lambda i: i['datetime2'], reverse=True)
+    l1 = lf[0:9]
+    l2 = lf[9:27]
+    a = l1[0]
+    b = l1[1]
+    c = l1[2]
+    d = l1[3]
+    e = l1[4]
+    f = l1[5]
+    g = l1[6]
+    h = l1[7]
+    i = l1[8]
+    context = {
+        'a': a,
+        'b': b,
+        'c': c,
+        'd': d,
+        'e': e,
+        'f': f,
+        'g': g,
+        'h': h,
+        'i': i,
+        'l2': l2,
+        'today': today
+    }
+
+#
 
 
 class ArticleDetailView(DetailView):
@@ -463,36 +553,44 @@ class ArticleDetailView(DetailView):
 
 
 class AddPostView(CreateView):
-    model=Post
-    form_class=PostForm
-    template_name='add_post.html'
-    success_url= reverse_lazy('home')
+    model = Post
+    form_class = PostForm
+    template_name = 'add_post.html'
+    success_url = reverse_lazy('home')
     #fields= '__all__'
 
+
+class AddPostView(CreateView):
+    model = Post
+
+    template_name = 'add_post.html'
+    success_url = reverse_lazy('index')
+
+
 class UpdatePostView(UpdateView):
-    model=Post
-    form_class=EditForm
-    template_name='update_post.html'
-    success_url= reverse_lazy('home')
-    #fields=['title','body']
+    model = Post
+    form_class = EditForm
+    template_name = 'update_post.html'
+    success_url = reverse_lazy('home')
+    # fields=['title','body']
+
 
 class DeletePostView(DeleteView):
-    model=Post
-    template_name='delete_post.html'
-    success_url= reverse_lazy('home')
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')
 
 
 class UserRegisterView(generic.CreateView):
-    form_class = UserCreationForm
-    template_name='register.html'
-    success_url=reverse_lazy('login')
-
+    form_class = SignUpForm
+    template_name = 'register.html'
+    success_url = reverse_lazy('login')
 
 
 class UserEditView(generic.UpdateView):
     form_class = UserChangeForm
-    template_name='registration/edit_profile.html'
-    success_url=reverse_lazy('home')
+    template_name = 'registration/edit_profile.html'
+    success_url = reverse_lazy('home')
 
     def get_object(self):
         return self.request.user
