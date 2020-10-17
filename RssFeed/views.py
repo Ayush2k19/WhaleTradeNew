@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post , Telegram , Twitter , Youtube
 from .forms import PostForm, EditForm
 from members.forms import SignUpForm
 from django.urls import reverse_lazy
@@ -460,7 +460,8 @@ def logout(request):
 
 class HomeView(ListView):
     # class HomeView(View) :
-    model = Post
+    
+    model = Post , Telegram
     fields = '__all__'
     template_name = 'trending.html'
     ordering = ['-post_date']
