@@ -18,3 +18,65 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('article-detail', args=(str(self.id)))
+
+class Telegram(models.Model):
+    title = models.CharField(max_length=255)
+    creater = models.CharField(max_length=255)
+    body = models.TextField()
+    post_date = models.DateField(auto_now_add=True)
+    group_url = models.URLField(max_length=200)
+    img_field = models.ImageField(
+        upload_to="images/", null=True, blank=True, height_field=None, width_field=None, max_length=100)
+
+    def __str__(self):
+        return self.title + '|' + str(self.creater)
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=(str(self.id)))
+
+
+class Twitter (models.Model):
+    title = models.CharField(max_length=255)
+    creater = models.CharField(max_length=255)
+    body = models.TextField()
+    post_date = models.DateField(auto_now_add=True)
+    group_url = models.URLField(max_length=200)
+    img_field = models.ImageField(
+        upload_to="images/", null=True, blank=True, height_field=None, width_field=None, max_length=100)
+
+    def __str__(self):
+        return self.title + '|' + str(self.creater)
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=(str(self.id)))
+
+class Youtube(models.Model):
+    title = models.CharField(max_length=255)
+    creater = models.CharField(max_length=255)
+    body = models.TextField()
+    post_date = models.DateField(auto_now_add=True)
+    group_url = models.URLField(max_length=200)
+    img_field = models.ImageField(
+        upload_to="images/", null=True, blank=True, height_field=None, width_field=None, max_length=100)
+
+    def __str__(self):
+        return self.title + '|' + str(self.creater)
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=(str(self.id)))
+
+class Discord(models.Model):
+    title = models.CharField(max_length=255)
+    creater = models.CharField(max_length=255)
+    body = models.TextField()
+    post_date = models.DateField(auto_now_add=True)
+    group_url = models.URLField(max_length=200)
+    img_field = models.ImageField(
+        upload_to="images/", null=True, blank=True, height_field=None, width_field=None, max_length=100)
+
+    def __str__(self):
+        return self.title + '|' + str(self.creater)
+
+    def get_absolute_url(self):
+        return reverse('article-detail', args=(str(self.id)))
+
