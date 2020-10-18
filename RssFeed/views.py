@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post , Telegram , Twitter , Youtube
+from .models import Post, Telegram, Twitter, Youtube, Discord
 from .forms import PostForm, EditForm
 from members.forms import SignUpForm
 from django.urls import reverse_lazy
@@ -438,7 +438,12 @@ def resources(request):
 
 
 def trending(request):
-    return render(request, "trending.html")
+    model1 = Post
+    model2 = Telegram
+    model3 = Twitter
+    model4 = Youtube
+    model5 = Discord
+    return render(request, "trending.html",  {"post": model1, "telegram": model2, "twitter": model3, "youtube": model2, "discord": model2})
 
 
 def registeration(request):
@@ -460,10 +465,12 @@ def logout(request):
 
 class HomeView(ListView):
     # class HomeView(View) :
-    
-    model = Post , Telegram
+
+    model1 = Post
+    model2 = Telegram
+
     fields = '__all__'
-    template_name = 'trending.html'
+    template_name = ''
     ordering = ['-post_date']
     NewsFeed1 = parse("https://cointelegraph.com/rss")
     NewsFeed2 = parse("https://news.bitcoin.com/feed/")
