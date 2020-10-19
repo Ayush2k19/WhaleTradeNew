@@ -438,12 +438,14 @@ def resources(request):
 
 
 def trending(request):
+    context={}
     model1 = Post
     model2 = Telegram
     model3 = Twitter
     model4 = Youtube
     model5 = Discord
-    return render(request, "trending.html",  {"post": model1, "telegram": model2, "twitter": model3, "youtube": model2, "discord": model2})
+    context['object_list']= {"post": model1, "telegram": model2, "twitter": model3, "youtube": model4, "discord": model5}
+    return render(request, "trending.html", context) 
 
 
 def registeration(request):
@@ -468,9 +470,14 @@ class HomeView(ListView):
 
     model1 = Post
     model2 = Telegram
+    model3 = Twitter
+    model4 = Youtube
+    model5 = Discord
+    #return render(request, "trending.html",  {"post": model1, "telegram": model2, "twitter": model3, "youtube": model2, "discord": model2})
 
     fields = '__all__'
-    template_name = ''
+    #template_name = 'trending.html',  {"post": model1, "telegram": model2, "twitter": model3, "youtube": model2, "discord": model2}
+
     ordering = ['-post_date']
     NewsFeed1 = parse("https://cointelegraph.com/rss")
     NewsFeed2 = parse("https://news.bitcoin.com/feed/")
@@ -552,12 +559,29 @@ class HomeView(ListView):
         'today': today
     }
 
-#
 
 
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article_details.html'
+
+class TelegramADV(DetailView):
+    model= Telegram
+    template_name =' telegram_article_details.html'
+
+class TwitterADV(DetailView):
+    model= Twitter
+    template_name = ' twitter_article_details.html '
+
+class DiscordADV(DetailView):
+    model= Twitter
+    template_name =' discord_article_details.html '
+
+class YoutubeADV(DetailView):
+    model= Youtube
+    template_name = ' youtube_article_details.html ' 
+
+
 
 
 class AddPostView(CreateView):

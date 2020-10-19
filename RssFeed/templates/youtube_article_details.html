@@ -1,0 +1,84 @@
+
+{% extends "base.html" %} {% load static %} {% block body %}
+
+<div class="container tel-show-cont">
+    <div class="row">
+        <div class="col-12 col-md-3 text-center">
+            <div class="card tel-card" style="width: 90%">
+                <img src="{% static '/img/meeting.jpg' %}" class="card-img-top" alt="..." style="
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+          " />
+                <div class="card-body">
+                    <a href="{{youtube.group_url}}" class="btn btn-success btn-block"><i class="fab fa-telegram"></i> View Group</a
+          >
+
+          <h5 class="card-title text-center mt-3"><h1>{{youtube.title}}</h1>
+          <small> {{youtube.creater}}</small></h5>
+          <p class="card-text">
+            <span class="text-danger">Attention:</span>
+            <span class="text-dark"
+              >Please Conduct Your Own Reserch before Trustion the Content.
+              Especially if They asked you for Money</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-9">
+      <div class="about-channel">
+        <div class="channel-heading">
+          <i class="material-icons" style="font-size: 48px">people</i>
+          <span class="channel-heading-span ml-3">{{youtube.title}}</span>
+        </div>
+        <hr />
+        <div class="about-channel-content">{{youtube.body}}
+
+        </div>
+      </div>
+
+      <div class="desc"><span>Telegram Groups You may like</span></div>
+      <div class="row other-channels">
+          <div class="col-12 col-sm-6 col-md-3 channel-inner">
+              <a href="#">
+                  <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+              </a>
+              <a class="text-dark heading-inner" href="{% url 'telegram-details' .pk %}">
+                  <span>Bangkok Fix</span>
+              </a>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 channel-inner">
+              <a href="#">
+                  <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+              </a>
+              <a class="text-dark heading-inner" href="#">
+                  <span>DYD Betting</span>
+              </a>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 channel-inner">
+              <a href="#">
+                  <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+              </a>
+              <a class="text-dark heading-inner" href="#">
+                  <span>TipsReapers</span>
+              </a>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 channel-inner">
+              <a href="#">
+                  <img class="rounded-circle" src="{% static '/img/meeting.jpg' %}" />
+              </a>
+              <a class="text-dark heading-inner" href="#">
+                  <span>TMasterMindzBets</span>
+              </a>
+          </div>
+      </div>
+    </div>
+
+
+
+<br></br>
+<a href="{% url 'trending' %}" class="btn btn-secondary" > Back </a>
+
+{% endblock %}
